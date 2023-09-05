@@ -2536,7 +2536,7 @@ const $d6da947014a9df3a$export$596d806903d1f59e = async (email, password)=>{
     try {
         const res = await (0, $1db09afc967eb816$export$2e2bcd8739ae039)({
             method: "POST",
-            url: "http://127.0.0.1:3000/api/v1/users/login",
+            url: "/api/v1/users/login",
             withCredentials: true,
             data: {
                 email: email,
@@ -2557,7 +2557,7 @@ const $d6da947014a9df3a$export$a0973bcfe11b05c9 = async ()=>{
     try {
         const res = await (0, $1db09afc967eb816$export$2e2bcd8739ae039)({
             method: "GET",
-            url: "http://127.0.0.1:3000/api/v1/users/logout",
+            url: "/api/v1/users/logout",
             withCredentials: true
         });
         if (res.data.status === "success") location.reload(true);
@@ -2571,7 +2571,7 @@ const $d6da947014a9df3a$export$a0973bcfe11b05c9 = async ()=>{
 
 const $2aa2fd90ce66bd3e$export$f558026a994b6051 = async (data, type)=>{
     try {
-        const url = type === "data" ? "http://127.0.0.1:3000/api/v1/users/updateMe" : "http://127.0.0.1:3000/api/v1/users/updateMyPassword";
+        const url = type === "data" ? "/api/v1/users/updateMe" : "/api/v1/users/updateMyPassword";
         const res = await (0, $1db09afc967eb816$export$2e2bcd8739ae039)({
             method: "PATCH",
             url: url,
@@ -2590,7 +2590,7 @@ const $2aa2fd90ce66bd3e$export$f558026a994b6051 = async (data, type)=>{
 const $c1a4d95da45d8364$export$8d5bdbf26681c0c2 = async (tourId)=>{
     try {
         //get checkout session from the api
-        const session = await (0, $1db09afc967eb816$export$2e2bcd8739ae039)(`http://127.0.0.1:3000/api/v1/bookings/checkout-session/${tourId}`);
+        const session = await (0, $1db09afc967eb816$export$2e2bcd8739ae039)(`/api/v1/bookings/checkout-session/${tourId}`);
         //create checkout form +charge credit card
         await $c1a4d95da45d8364$var$stripe.redirectToCheckout({
             sessionId: session.data.session.id
