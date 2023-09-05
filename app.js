@@ -33,7 +33,7 @@ app.use(cors());
 // }))
 //pre flight phase
 app.options('*', cors());
-
+//app.options('/api/v1/tours/:id',cors()) only for single route
 //serving static files
 // app.use(express.static(`/public/`));
 app.use(express.static(path.join(__dirname, 'public')));
