@@ -20,6 +20,8 @@ const viewRouter = require('./routes/viewRoutes');
 const app = express();
 //order of code really matters a lot in express
 
+app.enable('trust proxy');
+
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 // global middleware
