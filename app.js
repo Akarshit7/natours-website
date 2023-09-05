@@ -25,8 +25,14 @@ app.enable('trust proxy');
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 // global middleware
-
-app.use(cors({ origin: '*' }));
+//Implementing cors
+app.use(cors());
+//api.natours.com , front-end natours.com
+//then use app.use(cors({
+// origin:'https://www.natours.com'
+// }))
+//pre flight phase
+app.options('*', cors());
 
 //serving static files
 // app.use(express.static(`/public/`));
