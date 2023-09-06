@@ -26,7 +26,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
           // name: `${tour.name} Tour`,
           // description: tour.summary,
           // images: [
-          //   'https://media.istockphoto.com/id/968630976/photo/colorful-landscape-with-high-himalayan-mountains-beautiful-curving-river-green-forest-blue-sky.jpg?s=612x612&w=0&k=20&c=cbrwE0pXqvS_GHEkWSQ7t6jaMbVVjvwqnagOLvNViZ8=',
+          //   `${req.protocol}://${req.get('host')}/img/tours/${tour.imageCover}`,
           // ],
           price: tour.price * 100,
           // currency: 'usd',
