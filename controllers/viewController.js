@@ -78,3 +78,11 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
     tours,
   });
 });
+
+exports.alerts = catchAsync(async (req, res, next) => {
+  const { alert } = req.query;
+  if (alert === 'booking')
+    res.locals.alert =
+      'Your booking was successful! Please check your email for confomation.If your booking donst show up here immidealty,come back later.';
+  next();
+});
